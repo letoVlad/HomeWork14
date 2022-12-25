@@ -2,12 +2,9 @@
 public abstract class Transport {
     private String brand;
     private String model;
-    private String country;
-    private String color;
-    private int yearOfManufacture;
-    private int maximumSpeed;
+    private double engineVolume;
 
-    public Transport(String brand, String model, String country, String color, int yearOfManufacture, int maximumSpeed) {
+    public Transport(String brand, String model, double engineVolume) {
 
         if (brand != null && !brand.isEmpty() && !brand.isBlank()) {
             this.brand = brand;
@@ -21,22 +18,16 @@ public abstract class Transport {
             this.model = "default";
         }
 
-        if (country != null && !country.isEmpty() && !country.isBlank()) {
-            this.country = country;
-        } else {
-            this.country = "default";
-        }
-
-        if (color != null && !color.isEmpty() && !color.isBlank()) {
-            this.color = color;
-        } else {
-            this.color = "белый";
-        }
-
-        this.yearOfManufacture = yearOfManufacture;
-        this.maximumSpeed = maximumSpeed;
+        this.engineVolume = engineVolume;
+    }
+    void finishTheMove(){
+        System.out.println(getBrand() + " Начинает движение.");
     }
 
+    void startMoving() {
+        System.out.println(getBrand() + " Заканчивает движение.");
+
+    }
     public String getBrand() {
         return brand;
     }
@@ -53,27 +44,4 @@ public abstract class Transport {
         this.model = model;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getYearOfManufacture() {
-        return yearOfManufacture;
-    }
-
-    public int getMaximumSpeed() {
-        return maximumSpeed;
-    }
-
-    public void setMaximumSpeed(int maximumSpeed) {
-        this.maximumSpeed = maximumSpeed;
-    }
 }

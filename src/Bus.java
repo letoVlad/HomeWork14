@@ -1,15 +1,21 @@
 
-public class Bus extends Transport {
-    public Bus(String brand, String model, String country, String color, int yearOfManufacture, int maximumSpeed) {
-        super(brand, model, country, color, yearOfManufacture, maximumSpeed);
+public class Bus extends Transport implements Competing{
+    public Bus(String brand, String model, double engineVolume) {
+        super(brand, model, engineVolume);
     }
 
-    public void info() {
-        System.out.println("Марка " + getBrand() + "" +
-                ", модель " + getModel() +
-                ", сборвка в " + getCountry() +
-                ", цвет кузова - " + getColor() +
-                ", год выпуска " + getYearOfManufacture() + " год" +
-                ", максимальная скорость" + getYearOfManufacture());
+    @Override
+    public void pitStop() {
+        System.out.println(getBrand() + " Остановился на пит-стоп");
+    }
+
+    @Override
+    public void bestLapTime() {
+        System.out.println("Лучшее время круга " + getBrand() + " = " + Integer.valueOf((int) ((Math.random() * (120  - 150)) + 150)));
+    }
+
+    @Override
+    public void maxSpeed() {
+        System.out.println("Максимальная скорость " + getBrand() + " = " + Integer.valueOf((int) ((Math.random() * (100 - 150)) + 150)));
     }
 }

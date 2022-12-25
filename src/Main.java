@@ -1,13 +1,25 @@
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car(2.4, "Седан", 4, "х5x5хx555",
-                2, "Передняя", "Honda", "Accord", "Россия", "Белый", 2015, 240);
-        car.info();
-        Bus honda = new Bus("Honda", "Stepwgn Spada", "Japan", "White", 2012, 200);
-        Bus maz = new Bus("Маз", "Маз-1242", "Беларусь", "Black", 2000, 160);
-        Bus volvo = new Bus("Volvo", "9500", "Швеция", "White", 2020, 220);
-        honda.info();
-        maz.info();
-        volvo.info();
+        Car nisan = new Car("Nissan", "Almera",2.5);
+        Bus volvo = new Bus("volvo", "3ge",6.0);
+        Track daf = new Track("DAF", "Trucks",8.0);
+
+        Driver<Car> vlad = new Driver<>("Vladislav", true, 4, nisan);
+        Driver<Bus> ivan = new Driver<>("ivan", true, 5, volvo);
+        Driver<Track> denis = new Driver<>("denis", true, 6, daf);
+        vlad.info();
+        ivan.info();
+        denis.info();
+
+        System.out.println("-------------");
+        nisan.bestLapTime();
+        nisan.maxSpeed();
+        System.out.println("-------------");
+        volvo.bestLapTime();
+        volvo.maxSpeed();
+        System.out.println("-------------");
+        daf.bestLapTime();
+        daf.maxSpeed();
+
     }
 }
