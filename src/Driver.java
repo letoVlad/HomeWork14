@@ -1,12 +1,12 @@
 import java.util.Objects;
 
-public class Driver<T extends Transport> {
+public class Driver<T extends Transport, B extends DriverLicense> {
     private String fio;
-    private boolean driverLicense;
+    private B driverLicense;
     private int experience;
     private T vehicle;
 
-    public Driver(String fio, boolean driverLicense, int experience, T vehicle) {
+    public Driver(String fio, B driverLicense, int experience, T vehicle) {
         this.fio = fio;
         this.driverLicense = driverLicense;
         this.experience = experience;
@@ -19,14 +19,6 @@ public class Driver<T extends Transport> {
 
     public void setFio(String fio) {
         this.fio = fio;
-    }
-
-    public boolean isDriverLicense() {
-        return driverLicense;
-    }
-
-    public void setDriverLicense(boolean driverLicense) {
-        this.driverLicense = driverLicense;
     }
 
     public int getExperience() {

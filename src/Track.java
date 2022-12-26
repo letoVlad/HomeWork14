@@ -1,4 +1,4 @@
-public class Track extends Transport implements Competing{
+public class Track<T extends DriverLicenseС> extends Transport implements Competing{
     public Track(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }

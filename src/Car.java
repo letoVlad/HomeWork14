@@ -1,8 +1,9 @@
-public class Car extends Transport implements Competing {
+public class Car<T extends DriverLicenseB> extends Transport implements Competing {
 
     public Car(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }
+
 
     @Override
     public void pitStop() {
