@@ -1,18 +1,17 @@
+import Drivers.*;
+import Transport.*;
+
 public class Main {
     public static void main(String[] args) {
         Car nisan = new Car("Nissan", "Almeria", 2.5);
         Bus volvo = new Bus("volvo", "3ge", 6.0);
         Track daf = new Track("DAF", "Trucks", 8.0);
-        DriverLicenseB driverLicenseB = new DriverLicenseB();
-        DriverLicenseС driverLicenseC = new DriverLicenseС();
-        DriverLicenseD driverLicenseD = new DriverLicenseD();
+        DriverB<Car> ivan = new DriverB("Ivan", "Driver License B", 4, nisan);
+        DriverC<Track> maks = new DriverC("Ivan", "Driver License B", 4, daf);
+        DriverD<Bus> vlad = new DriverD("Ivan", "Driver License B", 4, volvo);
 
-        Driver<Car, DriverLicenseB> vlad = new Driver<>("Vladislav", driverLicenseB, 4, nisan);
-        Driver<Bus, DriverLicenseС> ivan = new Driver<>("ivan", driverLicenseC, 5, volvo);
-        Driver<Track, DriverLicenseD> denis = new Driver<>("denis", driverLicenseD, 6, daf);
-        vlad.info();
+
         ivan.info();
-        denis.info();
 
 
         System.out.println("-------------");
