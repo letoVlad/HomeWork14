@@ -1,12 +1,16 @@
+package Drivers;
+
+import Transport.Transport;
+
 import java.util.Objects;
 
 public class Driver<T extends Transport> {
     private String fio;
-    private boolean driverLicense;
+    private String driverLicense;
     private int experience;
     private T vehicle;
 
-    public Driver(String fio, boolean driverLicense, int experience, T vehicle) {
+    public Driver(String fio, String driverLicense, int experience, T vehicle) {
         this.fio = fio;
         this.driverLicense = driverLicense;
         this.experience = experience;
@@ -19,14 +23,6 @@ public class Driver<T extends Transport> {
 
     public void setFio(String fio) {
         this.fio = fio;
-    }
-
-    public boolean isDriverLicense() {
-        return driverLicense;
-    }
-
-    public void setDriverLicense(boolean driverLicense) {
-        this.driverLicense = driverLicense;
     }
 
     public int getExperience() {
@@ -50,19 +46,6 @@ public class Driver<T extends Transport> {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Driver driver = (Driver) o;
-        return driverLicense == driver.driverLicense && experience == driver.experience && Objects.equals(fio, driver.fio);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(fio, driverLicense, experience);
-    }
-
-    @Override
     public String toString() {
         return "Водитель{" +
                 "ФИО='" + fio + '\'' +
@@ -71,7 +54,7 @@ public class Driver<T extends Transport> {
                 '}';
     }
 
-    void info() {
+    public void info() {
         System.out.println("Водитель " + getFio() + " управляет " + vehicle.getBrand() + " и будет участвовать в заезде");
     }
 }
