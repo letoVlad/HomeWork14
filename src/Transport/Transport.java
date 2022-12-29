@@ -1,10 +1,10 @@
 package Transport;
-import Drivers.*;
 
-public abstract class Transport implements Competing{
+public abstract class Transport implements Competing {
     private String brand;
     private String model;
     private double engineVolume;
+    private Transport transport;
 
     public Transport(String brand, String model, double engineVolume) {
 
@@ -23,7 +23,7 @@ public abstract class Transport implements Competing{
         this.engineVolume = engineVolume;
     }
 
-    void finishTheMove(){
+    void finishTheMove() {
         System.out.println(getBrand() + " Начинает движение.");
     }
 
@@ -31,6 +31,7 @@ public abstract class Transport implements Competing{
         System.out.println(getBrand() + " Заканчивает движение.");
 
     }
+
     public String getBrand() {
         return brand;
     }
@@ -46,5 +47,7 @@ public abstract class Transport implements Competing{
     public void setModel(String model) {
         this.model = model;
     }
+
+    abstract void printType();
 
 }

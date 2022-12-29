@@ -1,28 +1,21 @@
-import Drivers.*;
-import Transport.*;
+import Drivers.DriverB;
+import Drivers.DriverC;
+import Drivers.DriverD;
+import Transport.Bus;
+import Transport.Car;
+import Transport.Track;
+import static Transport.Car.volumeEngine.*;
 
 public class Main {
     public static void main(String[] args) {
-        Car nisan = new Car("Nissan", "Almeria", 2.5);
+        Car nisan = new Car("Nissan", "Almeria",G1_5);
         Bus volvo = new Bus("volvo", "3ge", 6.0);
         Track daf = new Track("DAF", "Trucks", 8.0);
         DriverB<Car> ivan = new DriverB("Ivan", "Driver License B", 4, nisan);
         DriverC<Track> maks = new DriverC("Ivan", "Driver License B", 4, daf);
         DriverD<Bus> vlad = new DriverD("Ivan", "Driver License B", 4, volvo);
+        nisan.printType();
 
-
-        ivan.info();
-
-
-        System.out.println("-------------");
-        nisan.bestLapTime();
-        nisan.maxSpeed();
-        System.out.println("-------------");
-        volvo.bestLapTime();
-        volvo.maxSpeed();
-        System.out.println("-------------");
-        daf.bestLapTime();
-        daf.maxSpeed();
 
     }
 }
