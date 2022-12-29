@@ -17,7 +17,11 @@ public class Track extends Transport {
 
     @Override
     void printType() {
-        System.out.println(getLoadCapacity());
+        if (loadCapacity == null) {
+            System.out.println("Данных по авто не достаточно");
+        } else {
+            System.out.println(getLoadCapacity());
+        }
     }
 
     @Override

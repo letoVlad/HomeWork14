@@ -17,7 +17,11 @@ public class Bus extends Transport {
 
     @Override
     public void printType() {
-        System.out.println(getCapacity());
+        if (capacity == null) {
+            System.out.println("Данных по авто не достаточно");
+        } else {
+            System.out.println(getCapacity());
+        }
     }
 
 

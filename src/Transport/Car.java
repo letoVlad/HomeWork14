@@ -33,7 +33,11 @@ public class Car extends Transport {
 
     @Override
     public void printType() {
-        System.out.println(getVolume());
+        if (volume == null) {
+            System.out.println("Данных по авто не достаточно");
+        } else {
+            System.out.println(getVolume());
+        }
     }
 
     public enum Body {
