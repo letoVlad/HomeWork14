@@ -3,10 +3,11 @@ package Drivers;
 import Drivers.Driver;
 import Transport.Bus;
 import Transport.Car;
+import Transport.RightsCheckException;
 import Transport.Track;
 
 public class DriverC<T extends Track> extends Driver {
-    public DriverC(String fio, String driverLicense, int experience, T vehicle) {
+    public DriverC(String fio, String driverLicense, int experience, T vehicle) throws RightsCheckException {
         super(fio, driverLicense, experience, vehicle);
     }
 

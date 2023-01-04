@@ -1,11 +1,13 @@
 package Drivers;
 import Transport.Bus;
 import Transport.Car;
+import Transport.RightsCheckException;
 import Transport.Track;
 
 public class DriverB<T extends Car> extends Driver {
-    public DriverB(String fio, String driverLicense, int experience, T vehicle) {
+    public DriverB(String fio, String driverLicense, int experience, T vehicle) throws RightsCheckException {
         super(fio, driverLicense, experience, vehicle);
+
     }
 
     void startMoving() {

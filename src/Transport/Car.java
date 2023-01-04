@@ -17,6 +17,11 @@ public class Car extends Transport {
     }
 
     @Override
+    void getDiagnosed() throws Exception {
+        super.getDiagnosed();
+    }
+
+    @Override
     public void pitStop() {
         System.out.println(getBrand() + " Остановился на пит-стоп");
     }
