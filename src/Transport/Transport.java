@@ -23,7 +23,7 @@ public abstract class Transport implements Competing {
         this.engineVolume = engineVolume;
     }
 
-    void getDiagnosed()throws Exception{}
+   public abstract boolean getDiagnosed();
 
     void finishTheMove() {
         System.out.println(getBrand() + " Начинает движение.");

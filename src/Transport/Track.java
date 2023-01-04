@@ -39,6 +39,11 @@ public class Track extends Transport {
         System.out.println("Максимальная скорость " + getBrand() + " = " + Integer.valueOf((int) ((Math.random() * (150 - 200)) + 200)));
     }
 
+    @Override
+    public boolean getDiagnosed() {
+        return Math.random() > 0.7;
+    }
+
     public enum LoadCapacity {
         N1(null, 3.5f),
         N2(3.5f, 12f),
@@ -54,7 +59,8 @@ public class Track extends Transport {
             this.maxCapacity = maxCapacity;
 
         }
-//Поиск значения в enum
+
+        //Поиск значения в enum
         public static LoadCapacity correctCapacity(int capacity) {
             for (LoadCapacity value : values()) {
                 if (capacity < 3.5) {
@@ -70,11 +76,11 @@ public class Track extends Transport {
 
         @Override
         public String toString() {
-            if (minCapacity == null){
-                return "Грузоподъемность:"  +
+            if (minCapacity == null) {
+                return "Грузоподъемность:" +
                         " до " + maxCapacity + " тонн";
-            } else if (maxCapacity == null){
-                return "Грузоподъемность:"  +
+            } else if (maxCapacity == null) {
+                return "Грузоподъемность:" +
                         " от " + minCapacity + " тонн";
             } else {
                 return "Грузоподъемность: от " + minCapacity +

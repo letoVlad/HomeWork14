@@ -17,8 +17,8 @@ public class Car extends Transport {
     }
 
     @Override
-    void getDiagnosed() throws Exception {
-        super.getDiagnosed();
+    public boolean getDiagnosed() {
+        return Math.random() > 0.7;
     }
 
     @Override
