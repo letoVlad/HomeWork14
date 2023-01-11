@@ -52,4 +52,13 @@ public abstract class Transport implements Competing {
 
     abstract void printType();
 
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineVolume=" + engineVolume +
+                ", transport=" + transport +
+                '}';
+    }
 }
