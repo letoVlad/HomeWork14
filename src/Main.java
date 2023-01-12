@@ -5,7 +5,9 @@ import Drivers.DriverD;
 import Transport.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static Transport.Car.volumeEngine.*;
 
@@ -27,14 +29,15 @@ public class Main {
         drivers.add(maks);
         drivers.add(vlad);
 
-        List<Mechanic> mechanics = new ArrayList<>();
-        mechanics.add(new Mechanic<Car>("Alex", "volvoCompany", nisan));
-        mechanics.add(new Mechanic<Bus>("Roma", "BMWMotorSport", volvo));
-        mechanics.add(new Mechanic<Track>("Alex", "NissanGroup", daf));
+        HashMap<Transport, Mechanic> mechanics = new HashMap<>();
+        mechanics.put(nisan, new Mechanic<Car>("Alex", "volvoCompany", nisan));
+        mechanics.put(volvo, new Mechanic<Bus>("Roma", "BMWMotorSport", volvo));
+        mechanics.put(daf, new Mechanic<Track>("Alex", "NissanGroup", daf));
+        for (Map.Entry<Transport, Mechanic> info: mechanics.entrySet()){
+            System.out.println("Имя механика: " + info.getValue().getFIO() + " Ремонтируемый трансопрт: " + info.getKey().getBrand());
+        }
 
-        System.out.println(mechanics.get(2));
-        System.out.println(drivers.get(2));
-        System.out.println(transports.get(2));
+
 
 
     }
