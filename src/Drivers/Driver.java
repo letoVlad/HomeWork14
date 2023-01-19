@@ -10,7 +10,6 @@ public class Driver<T extends Transport> {
     private int experience;
     private T vehicle;
 
-
     public Driver(String fio, String driverLicense, int experience, T vehicle) throws RightsCheckException {
         this.fio = fio;
         if (driverLicense != null && !driverLicense.isEmpty() && !driverLicense.isBlank() ) {
