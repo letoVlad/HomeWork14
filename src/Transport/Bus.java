@@ -16,6 +16,13 @@ public class Bus extends Transport {
     }
 
     @Override
+    public boolean getDiagnosed() {
+        System.out.println("Автобус " + getBrand() + " в диагностике не требуется");
+        return true;
+    }
+
+
+    @Override
     public void printType() {
         if (capacity == null) {
             System.out.println("Данных по авто не достаточно");

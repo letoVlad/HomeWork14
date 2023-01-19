@@ -23,6 +23,8 @@ public abstract class Transport implements Competing {
         this.engineVolume = engineVolume;
     }
 
+   public abstract boolean getDiagnosed();
+
     void finishTheMove() {
         System.out.println(getBrand() + " Начинает движение.");
     }
@@ -50,4 +52,13 @@ public abstract class Transport implements Competing {
 
     abstract void printType();
 
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineVolume=" + engineVolume +
+                ", transport=" + transport +
+                '}';
+    }
 }

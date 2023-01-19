@@ -1,6 +1,6 @@
 package Drivers;
 
-import Transport.Transport;
+import Transport.*;
 
 import java.util.Objects;
 
@@ -10,11 +10,16 @@ public class Driver<T extends Transport> {
     private int experience;
     private T vehicle;
 
-    public Driver(String fio, String driverLicense, int experience, T vehicle) {
+    public Driver(String fio, String driverLicense, int experience, T vehicle) throws RightsCheckException {
         this.fio = fio;
-        this.driverLicense = driverLicense;
+        if (driverLicense != null && !driverLicense.isEmpty() && !driverLicense.isBlank() ) {
+            this.driverLicense = driverLicense;
+        } else {
+            throw new RightsCheckException("ПРАВА не указаны ");
+        }
         this.experience = experience;
         this.vehicle = vehicle;
+
     }
 
     public String getFio() {

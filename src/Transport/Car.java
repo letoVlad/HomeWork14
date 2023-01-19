@@ -17,6 +17,11 @@ public class Car extends Transport {
     }
 
     @Override
+    public boolean getDiagnosed() {
+        return Math.random() > 0.7;
+    }
+
+    @Override
     public void pitStop() {
         System.out.println(getBrand() + " Остановился на пит-стоп");
     }
