@@ -19,7 +19,21 @@ public class Driver<T extends Transport> {
         }
         this.experience = experience;
         this.vehicle = vehicle;
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver<?> driver = (Driver<?>) o;
+        return experience == driver.experience && Objects.equals(fio, driver.fio)
+                && Objects.equals(driverLicense, driver.driverLicense)
+                && Objects.equals(vehicle, driver.vehicle);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fio, driverLicense, experience, vehicle);
     }
 
     public String getFio() {
