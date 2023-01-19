@@ -56,4 +56,5 @@ public class Mechanic<T extends Transport> {
                 ", ремонитирует= " + transport.getBrand() + '\'' +
                 '}';
     }
+
 }
