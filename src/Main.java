@@ -4,10 +4,7 @@ import Drivers.DriverC;
 import Drivers.DriverD;
 import Transport.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static Transport.Car.volumeEngine.*;
 
@@ -21,24 +18,21 @@ public class Main {
         transports.add(volvo);
         transports.add(daf);
 
-        List<Driver> drivers = new ArrayList<>();
-        DriverB<Car> ivan = new DriverB("Ivan", "21 ", 4, nisan);
-        DriverC<Track> maks = new DriverC("Ivan", "Driver License B", 4, daf);
-        DriverD<Bus> vlad = new DriverD("Ivan", "Driver License B", 4, volvo);
+        Set<Driver> drivers = new HashSet<>();
+        DriverB<Car> ivan = new DriverB("Ivan", "Driver License B", 4, nisan);
+        DriverC<Track> maks = new DriverC("maks", "Driver License C", 2, daf);
+        DriverD<Bus> vlad = new DriverD("vlad", "Driver License A", 3, volvo);
+        DriverD<Bus> dima = new DriverD("dima", "Driver License B", 4, volvo);
+
         drivers.add(ivan);
         drivers.add(maks);
         drivers.add(vlad);
-
-        HashMap<Transport, Mechanic> mechanics = new HashMap<>();
-        mechanics.put(nisan, new Mechanic<Car>("Alex", "volvoCompany", nisan));
-        mechanics.put(volvo, new Mechanic<Bus>("Roma", "BMWMotorSport", volvo));
-        mechanics.put(daf, new Mechanic<Track>("Alex", "NissanGroup", daf));
-        for (Map.Entry<Transport, Mechanic> info: mechanics.entrySet()){
-            System.out.println("Имя механика: " + info.getValue().getFIO() + " Ремонтируемый трансопрт: " + info.getKey().getBrand());
+        drivers.add(vlad);
+        drivers.add(dima);
+        drivers.add(dima);
+        Iterator<Driver> iterator = drivers.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
-
-
-
-
     }
 }
